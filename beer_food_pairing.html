@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>beer food selector</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"
+        type="text/javascript"></script>
+  </head>
+  <script>
+  var beer;
+  $(document).ready(function() {
+      $('#mySelect').change(function(){
+
+          if($(this).val() == 'beef') {
+            beer = "Pilsener";
+            alert(beer);
+          };
+          if($(this).val() == 'chicken') {
+            beer = "Hoegarden";
+            alert(beer);
+          };
+          if($(this).val() == 'lamb') {
+            beer = "Stella";
+            alert(beer);
+          };
+      });
+  });
+</script>
+  <body>
+
+<select name="mySelect" id="mySelect">
+    <option value="what you cooking?">what you cooking?</option>
+    <option value="beef">beef</option>
+    <option value="chicken">chicken</option>
+    <option value="lamb">lamb</option>
+</select>
+
+  </body>
+</html>

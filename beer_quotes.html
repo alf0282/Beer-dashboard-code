@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Random beer quote generator</title>
+
+    <style>
+
+      .center {
+        margin: auto;
+        width: 100%;
+        text-align: center;
+      }
+      body {
+        background-size: 100%, auto;
+      }
+      p {
+        font-size: 20px;
+        justify-content: center;
+        font-weight: lighter;
+      }
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+      #container1 {
+        display: inline-block;;
+        justify-content: center;
+        position: relative;;;
+        margin-right: 40px;
+        margin-top: 125px;
+      }
+      .button {
+        background: #01101a;
+        background-image: -webkit-linear-gradient(top, #01101a, #6e6e6e);
+        background-image: -moz-linear-gradient(top, #01101a, #6e6e6e);
+        background-image: -ms-linear-gradient(top, #01101a, #6e6e6e);
+        background-image: -o-linear-gradient(top, #01101a, #6e6e6e);
+        background-image: linear-gradient(to bottom, #01101a, #6e6e6e);
+        -webkit-border-radius: 31;
+        -moz-border-radius: 31;
+        border-radius: 31px;
+        font-family: Arial;
+        color: #ffffff;
+        font-size: 20px;
+        padding: 11px 20px 10px 20px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .button:hover {
+        text-decoration: none;
+      }
+
+    </style>
+
+    <script type="text/javascript">
+
+      var quotes = [
+        ("Oh, Lisa, you and your stories: Bart’s a vampire, beer kills brain cells. Now let’s go back to that … building … thingie … where our beds and TV … is. – Homer Simpson"),
+        ("Why do beer companies bother with an expiration date… It is never going to make it anywhere near that. - Unknown"),
+        ("I don't like the word 'alcoholic'. I like to think of myself as an advanced drinker. ― Chelsea Handler"),
+        ("You can't be a real country unless you have a beer and an airline - it helps if you have some kind of football team, or some nuclear weapons, but in the very least you need a beer. - Frank Zappa"),
+        ("Beauty is in the eye of the beerholder. - Kinky Friedman"),
+        ("I have respect for beer. - Russell Crowe"),
+        ("Apu, I need a keg and a six-pack to hold me until I tap the keg. - Homer Simpson"),
+        ("I feel sorry for people who don't drink. When they wake up in the morning. That's as good as they're going to feel all day. - Frank Sinatra"),
+        ("The church is near, but the road is icy. The bar is far, but we will walk carefully. - Russian proverb"),
+        ("Homer no function beer well without. - Homer Simpson"),
+        ("Remember I before E, except in Budweiser. - Anonymous"),
+        ("This is grain, which any fool can eat, but for which the Lord intended a more divine means of consumption… Beer! - Robin Hood"),
+        ("Make sure that the beer – four pints a week – goes to the troops under fire before any of the parties in the rear get a drop. - Winston Churchill to his Secretary of War, 1944"),
+        ("I am not so think as you drunk I am!  - Anonymous"),
+        ("Reality is an illusion caused by a lack of good beer. - Anonymous"),
+        ("When I read about the evils of drinking, I gave up reading. Henny Youngman")
+        ];
+
+      function randomQuote() {
+        var length = quotes.length;
+        var rand = Math.round(Math.random() * (length - 1));
+        document.getElementById("quote").innerHTML = quotes[rand];
+      }
+  </script>
+  </head>
+  <body>
+    <div class="center">
+      <div id="container1">
+        <h1 align="center">Random beer quotes</h1>
+            <button onclick="randomQuote()" class="button">Click me!</button>
+              <br></br>
+                <p id="quote"></p>
+    </div>
+
+  </body>
+</html>

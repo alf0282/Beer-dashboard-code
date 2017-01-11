@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Beer data dashboard</title>
+    <link type="text/css" rel="stylesheet" href="js/uikit-2.24.0/css/uikit.almost-flat.min.css" />
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/uikit-2.24.0/js/uikit.min.js"></script>
+  <style>
+    h1 {
+      text-align: center;
+      font-size: 40px;
+    }
+    h2 {
+      text-align: center;
+      font-size: 30px;
+      font-family: cursive;
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+    p {
+      text-align: center;
+      font-size: 28px;
+      line-height: 1.5em;
+      font-family: cursive;
+    }
+    p1 {
+      text-align: center;
+      font-size: 28px;
+      line-height: 1.5em;
+      font-family: cursive;
+    }
+    #imgholder {
+      text-align: center;
+    }
+    #selOpt {
+      text-align: center;
+      font-size: 28px;
+    }
+    .button {
+      background-color: #f2f22c;
+      /*padding: 20px 35px;*/
+      display: inline-block;
+      color: black;
+      text-align: center;
+      font-size: 28px;
+      font-family: cursive;
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+  </style>
+</head>
+<body>
+    <div class="uk-container uk-container-center uk-margin-top">
+         <ul class="uk-grid" data-uk-grid-margin>
+            <li class="uk-hidden-small uk-width-medium-1-1 uk-width-large-1-1">
+                <div class="uk-panel uk-panel-box">
+                  <h1><b>Name goes here</b></h1>
+                   <!-- <h2><b>The fun beer app</b></h2> -->
+                      <div id="imgholder">
+                        <img src="/Users/Chandrashekar/Documents/Goldsmiths/IDV/CW3_datadashboard/pictures/beerbottles.jpg" alt="beer" style="width:1024px;height:350px;"></img>
+                      </div>
+            </li>
+            <li class="uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-1-2">
+                <div class="uk-panel uk-panel-box">
+                    <h2>What's cooking?</h2>
+                    <script>
+                    var beer;
+                    $(document).ready(function() {
+                        $('#mySelect').change(function(){
+
+                            if($(this).val() == 'beef') {
+                              beer = "Pilsener";
+                              // alert(beer);
+                              $("p1").show();
+                            };
+                            if($(this).val() == 'chicken') {
+                              beer = "Hoegarden";
+                              alert(beer);
+                            };
+                            if($(this).val() == 'lamb') {
+                              beer = "Stella";
+                              alert(beer);
+                            };
+                        });
+                    });
+                  </script>
+                <div id="selOpt">
+                  <select name="mySelect" id="mySelect">
+                      <option value="what you cooking?"><p1>So, what are you cooking?</p1></option>
+                      <option value="beef">beef</option>
+                      <option value="chicken">chicken</option>
+                      <option value="lamb">lamb</option>
+                  </select>
+                  <br></br>
+                  <p1 style="display: none">The Czech Pilsner, or sometimes known as the Bohemian Pilsner, is light straw to golden color and crystal clear. Hops are very prevalent usually with a spicy bitterness and or a spicy floral flavor and aroma, notably one of the defining characteristics of the Saaz hop. Smooth and crisp with a clean malty palate, many are grassy. Some of the originals will show some archaic yeast characteristics similar to very mild buttery or fusel (rose like alcohol) flavors and aromas.</p1>
+                </div>
+            </li>
+            <li class="uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-1-2">
+                <div class="uk-panel uk-panel-box">
+                    <h2>Beer-spiration for the day!</h2>
+                    <div id="imgholder">
+                      <img src="/Users/Chandrashekar/Documents/Goldsmiths/IDV/CW3_datadashboard/pictures/drunk_homer_simpson.jpg" alt="beer" style="width:100%"></img>
+                    </div>
+                      <br></br>
+                        <div id="imgholder">
+                          <script type="text/javascript">
+
+                            var quotes = [
+                              ("Oh, Lisa, you and your stories: Bart’s a vampire, beer kills brain cells. Now let’s go back to that … building … thingie … where our beds and TV … is. – Homer Simpson"),
+                              ("Why do beer companies bother with an expiration date… It is never going to make it anywhere near that. - Unknown"),
+                              ("I don't like the word 'alcoholic'. I like to think of myself as an advanced drinker. ― Chelsea Handler"),
+                              ("You can't be a real country unless you have a beer and an airline - it helps if you have some kind of football team, or some nuclear weapons, but in the very least you need a beer. - Frank Zappa"),
+                              ("Beauty is in the eye of the beerholder. - Kinky Friedman"),
+                              ("I have respect for beer. - Russell Crowe"),
+                              ("Apu, I need a keg and a six-pack to hold me until I tap the keg. - Homer Simpson"),
+                              ("I feel sorry for people who don't drink. When they wake up in the morning. That's as good as they're going to feel all day. - Frank Sinatra"),
+                              ("The church is near, but the road is icy. The bar is far, but we will walk carefully. - Russian proverb"),
+                              ("Homer no function beer well without. - Homer Simpson"),
+                              ("Remember I before E, except in Budweiser. - Anonymous"),
+                              ("This is grain, which any fool can eat, but for which the Lord intended a more divine means of consumption… Beer! - Robin Hood"),
+                              ("Make sure that the beer – four pints a week – goes to the troops under fire before any of the parties in the rear get a drop. - Winston Churchill to his Secretary of War, 1944"),
+                              ("I am not so think as you drunk I am!  - Anonymous"),
+                              ("Reality is an illusion caused by a lack of good beer. - Anonymous"),
+                              ("When I read about the evils of drinking, I gave up reading. Henny Youngman")
+                              ];
+
+                            function randomQuote() {
+                              var length = quotes.length;
+                              var rand = Math.round(Math.random() * (length - 1));
+                              document.getElementById("quote").innerHTML = quotes[rand];
+                            }
+                        </script>
+                          <div class="center">
+                            <div id="container1">
+                              <!-- <h1 align="center">Random beer quotes</h1> -->
+                                <div class="button">
+                                  <button onclick="randomQuote()" class= "button" style="width: 100%">Click me!</button>
+                                </div>
+                                    <br></br>
+                                      <p id="quote"></p>
+                        </div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</body>
+</html>
